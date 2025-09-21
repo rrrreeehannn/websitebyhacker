@@ -4,70 +4,226 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aplikasi Peminjaman dan Pengelolaan Barang Peralatan Olahraga</title>
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f5f6fa;
+      color: #2c3e50;
+    }
+
+    /* Header */
+    .header {
+      background: #2980b9;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .site-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .navbar .nav-list {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .navbar .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 2rem auto;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Button reusable */
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #27ae60;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #219150;
+    }
+
+    /* Card reusable */
+    .card {
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .card-featured h3 {
+      color: #2980b9;
+    }
+
+    /* Grid Layout */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Table styling */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background: #2980b9;
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar .nav-list {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <h1>Aplikasi Peminjaman dan Pengelolaan Barang Peralatan Olahraga</h1>
-    <nav>
-      <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#fitur">Fitur</a></li>
-        <li><a href="#peralatan">Peralatan</a></li>
-        <li><a href="#kontak">Kontak</a></li>
+  <header class="header">
+    <h1 class="site-title">Aplikasi Peminjaman dan Pengelolaan Barang Peralatan Olahraga</h1>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="#beranda" class="nav-link">Beranda</a></li>
+        <li><a href="#fitur" class="nav-link">Fitur</a></li>
+        <li><a href="#peralatan" class="nav-link">Peralatan</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Konten utama -->
-  <main>
+  <main class="container">
     <!-- Section Beranda -->
-    <section id="beranda">
+    <section id="beranda" class="section">
       <h2>Selamat Datang</h2>
       <p>Aplikasi ini membantu dalam proses peminjaman dan pengelolaan peralatan olahraga secara online.</p>
+      <a href="#peralatan" class="btn btn-primary">Lihat Peralatan</a>
     </section>
 
     <!-- Section Fitur -->
-    <section id="fitur">
-      <h2>Fitur Utama</h2>
-      <ul>
-        <li>Manajemen data peralatan olahraga</li>
-        <li>Peminjaman dan pengembalian peralatan</li>
-        <li>Riwayat transaksi peminjaman</li>
-      </ul>
+    <section id="fitur" class="section grid-3">
+      <div class="card card-featured">
+        <h3>Manajemen Data</h3>
+        <p>Kelola data peralatan olahraga dengan mudah.</p>
+      </div>
+      <div class="card card-featured">
+        <h3>Peminjaman</h3>
+        <p>Proses peminjaman dan pengembalian cepat & praktis.</p>
+      </div>
+      <div class="card card-featured">
+        <h3>Riwayat</h3>
+        <p>Pantau riwayat transaksi peminjaman dengan detail.</p>
+      </div>
     </section>
 
     <!-- Section Peralatan -->
-    <section id="peralatan">
+    <section id="peralatan" class="section">
       <h2>Contoh Daftar Peralatan</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Kode</th>
-            <th>Nama</th>
-            <th>Kategori</th>
-            <th>Stok</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>OLG-01</td>
-            <td>Bola Futsal</td>
-            <td>Bola</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>OLG-02</td>
-            <td>Raket Badminton</td>
-            <td>Raket</td>
-            <td>5</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Nama</th>
+              <th>Kategori</th>
+              <th>Stok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OLG-01</td>
+              <td>Bola Futsal</td>
+              <td>Bola</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>OLG-02</td>
+              <td>Raket Badminton</td>
+              <td>Raket</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- Section Kontak -->
-    <section id="kontak">
+    <section id="kontak" class="section">
       <h2>Kontak</h2>
       <p>Email: admin@contoh.com</p>
       <p>Telepon: +62 812 3456 7890</p>
@@ -75,7 +231,7 @@
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <p>&copy; 2025 Aplikasi Peminjaman Peralatan Olahraga</p>
     <p>Referensi desain web:</p>
     <ul>
